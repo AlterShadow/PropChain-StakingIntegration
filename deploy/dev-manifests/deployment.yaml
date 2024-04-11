@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: token-dashboard-ui-dev-deployment
+  namespace: token-dashboard-ui-dev
+  labels:
+    app: token-dashboard-ui-dev
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: token-dashboard-ui-dev
+  template:
+    metadata:
+      labels:
+        app: token-dashboard-ui-dev
+    spec:
+      containers:
+        - name: token-dashboard-ui-dev-container
+          image: europe-west1-docker.pkg.dev/creditsystem/others/token-dashboard-ui-dev:c3dd215-20240205
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 80
+              name: console

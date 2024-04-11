@@ -1,0 +1,641 @@
+.board-members-section {
+
+  .welcome-text{
+    font-size: 25px;
+    font-weight: 500;
+    line-height: 36px;
+    letter-spacing: -0.375px;
+
+    @include md{
+      font-size: 16px;
+    }
+  }
+  .member-details-container {
+    position: relative;
+    height: 124px;
+    border-radius: 15px;
+    border: 1px solid #2C416A;
+    background: linear-gradient(145deg, #192E5B 0%, #192E5B 50%, rgba(255, 255, 255, 0.9) 100%);
+    box-shadow: 0px 4px 24px -1px rgba(0, 0, 0, 0.12);
+    backdrop-filter: blur(20px);
+    padding-left: 52px;
+    z-index: 10;
+
+    @include md{
+      height: auto;
+      padding-left: 0;
+      margin-top: 100px;
+    }
+
+    .title-container{
+      margin-top: 32px;
+      margin-left: 40px;
+
+      @include md{
+        margin-left: 0;
+        margin-top: 72px;
+        padding: 0 20px;
+      }
+
+      .title{
+        font-size: 34px;
+        font-weight: 700;
+        line-height: 36px;
+        letter-spacing: -1.02px;
+
+        @include md{
+          font-size: 24px;
+        }
+      }
+    }
+
+    .brick-circle-container{
+      position: relative;
+      height: 135px;
+      width: 135px;
+      border-radius: 50%;
+      border: 1px solid #274484;
+      margin-top: 32px;
+
+      @include md{
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: -60px;
+      }
+
+      .arch{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: -1;
+      }
+
+      .star-container{
+        height: 65px;
+        width: 65px;
+        position: absolute;
+        bottom: -50px;
+
+        .xp-number{
+          font-size: 20.839px;
+          font-weight: 600;
+          line-height: normal;
+          letter-spacing: -1.563px;
+        }
+        .xp-label{
+          color: rgba(255, 255, 255, 0.54);
+          font-size: 12.258px;
+          font-weight: 500;
+          line-height: normal;
+          letter-spacing: -0.919px;
+          margin-top: -2px;
+        }
+
+        .bolt{
+          position: absolute;
+          z-index: 10;
+          top: -10px;
+        }
+      }
+      .star{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+
+    .member-since {
+      color: rgba(174, 174, 174, 0.66);
+      font-size: 15px;
+      font-weight: 300;
+      line-height: 23px;
+      letter-spacing: -0.225px;
+    }
+
+    .member-status {
+      border-radius: 8px;
+      background: #00422C;
+      height: 24px;
+      color: #00EEA0;
+      font-size: 12px;
+      font-weight: 500;
+      line-height: 14.269px;
+    }
+    .peer-board-members{
+      color: rgba(228, 228, 228, 0.95);
+      font-size: 15px;
+      font-weight: 300;
+      line-height: 23px; /* 153.333% */
+      letter-spacing: -0.225px;
+      padding-bottom: 14px;
+      padding-right: 32px;
+
+      @include md{
+        padding: 20px 20px 15px 20px;
+      }
+    }
+
+    .peer-member-image-container{
+      @include md{
+        margin-top: 10px;
+      }
+    }
+    .peer-member-image,
+    .peer-member-number{
+      height: 60px;
+      width: 60px;
+      border-radius: 50%;
+      border: 5px solid #4D657A;
+
+      @include md{
+        height: 45px;
+        width: 45px;
+        border: 3px solid #4D657A;
+      }
+    }
+    .peer-member-image{
+      margin-right: -30px;
+
+      @include md{
+        margin-right: -20px;
+      }
+    }
+
+    .peer-member-number{
+      @include md{
+        font-size: 12px;
+      }
+    }
+  }
+
+  .member-earning-details{
+    gap: 14px;
+    padding-left: 225px;
+    margin-top: 20px;
+
+    @include md{
+      padding-left: 0;
+      gap: 24px;
+    }
+    .box{
+      height: 70px;
+      border-radius: 65px;
+      border: 1 solid map-get($scs, "300");
+      background: #102756;
+      box-shadow: 0px 0px 12px 0px #4263A6;
+      padding: 0 42px;
+
+      .icon{
+        flex-shrink: 0;
+        margin-right: 14px;
+      }
+
+      .value{
+        color: #FFF;
+        font-size: 19px;
+        font-weight: 500;
+        line-height: normal;
+        letter-spacing: -0.292px;
+        margin-top: 7px;
+
+        span{
+          color: #6C90D9;
+          font-size: 16px;
+          font-weight: 400;
+          line-height: normal;
+          letter-spacing: -0.247px;
+        }
+      }
+      .label{
+        color: #6C90D9;
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 24.403px;
+        letter-spacing: -0.192px;
+      }
+    }
+  }
+
+  .news-box{
+    padding: 40px 45px;
+    padding-bottom: 30px;
+    border-radius: 15px;
+    background: linear-gradient(215deg, rgba(42, 71, 133, 0.61) 0%, #182C56 75%, #182C56 100%),
+                url(../../../static/assets/Member/board-members-box-bg.jpg) no-repeat;
+    box-shadow: 0px 4px 24px -1px rgba(0, 0, 0, 0.12);
+    background-size: contain, 140%;
+    background-position: 0, 0 30%;
+    margin-top: 20px;
+
+    @include md{
+      background-size: contain, cover;
+      background-position: 0, center;
+      padding: 20px;
+    }
+
+    .news-tab{
+      color: #E5E5E5;
+      font-size: 18;
+      font-weight: 500;
+      line-height: 24.933px; /* 137.5% */
+      letter-spacing: -0.272px;
+      cursor: pointer;
+      position: relative;
+      transition: all 0.5s;
+
+      &::after{
+        position: absolute;
+        content: "";
+        height: 2px;
+        width: 100%;
+        background-color: map-get($pcs, "100");
+        left: 0;
+        bottom: 0;
+        transition: all 0.5s;
+        opacity: 0;
+      }
+
+      &.active{
+        color: map-get($pcs, '100');
+        &::after{
+          opacity: 1;
+        }
+      }
+
+    }
+
+    .news-carousel{
+      .carousel-indicators{
+        justify-content: start;
+        margin: 0;
+        bottom: -27px;
+
+        button{
+          height: 12px;
+          width: 12px;
+          border-radius: 50%;
+          background-color: rgba(217, 217, 217, 0.20);
+          opacity: 1;
+
+          &.active{
+            background-color: map-get($pcs, "100");
+          }
+        }
+      }
+    }
+
+    .title{
+      max-width: 455px;
+      font-size: 29px;
+      font-weight: 500;
+      line-height: 33px;
+      letter-spacing: -0.435px;
+      margin-top: 70px;
+      margin-bottom: 14px;
+    }
+    .description{
+      font-size: 17px;
+      font-weight: 300;
+      line-height: 23px;
+      letter-spacing: -0.255px;
+      max-width: 432px;
+      margin-bottom: 30px;
+    }
+
+    .dot-number{
+      font-size: 11px;
+      font-weight: 300;
+      line-height: 23px;
+      letter-spacing: -0.165px;
+    }
+  }
+
+  .xp-card {
+    position: relative;
+    padding: 70px 25px;
+    border-radius: 15px;
+    border: 0.8px solid #FFF;
+    background: linear-gradient(164deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.11) 100%);
+    box-shadow: 0px 4px 24px -1px rgba(0, 0, 0, 0.12);
+    backdrop-filter: blur(20px);
+    margin-top: 50px;
+
+    @include md {
+      padding: 60px 22px 40px 22px;
+    }
+
+    .poll-bg {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+
+    .earn-xp-badge {
+      position: absolute;
+      top: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-radius: 8px;
+      background: map-get($map: $pcs, $key: '100');
+      box-shadow: 0px 0px 12px 0px map-get($map: $pcs, $key: '100');
+      color: map-get($map: $scs, $key: '100');
+      font-size: 15px;
+      font-weight: 700;
+      line-height: 95.123%;
+      letter-spacing: -0.225px;
+      padding: 7.5px 12px;
+      display: flex;
+      align-items: center;
+    }
+
+    .vote-and-eard-badge {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 4px 21px;
+      border-radius: 6px;
+      background: var(--gradient-100, linear-gradient(221deg, #2A4785 0%, #182C56 100%));
+      color: var(--primary-100, #FFBE06);
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 93.75%;
+      letter-spacing: -0.24px;
+      width: fit-content;
+    }
+
+    .title {
+      color: map-get($map: $pcs, $key: '400');
+      font-size: 25px;
+      font-weight: 400;
+      line-height: 112%;
+      letter-spacing: -0.375px;
+      margin: 26px 0 32px 0;
+
+      @include md {
+        font-size: 22px;
+      }
+    }
+  }
+
+  .buy-propc-box {
+    position: relative;
+    border-radius: 15px;
+    background: linear-gradient(164deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.11) 100%);
+    box-shadow: 0px 4px 24px -1px rgba(0, 0, 0, 0.12);
+    backdrop-filter: blur(20px);
+    padding: 32px 25px;
+    margin-top: 20px;
+    @include md {
+      padding: 28px 22px;
+    }
+
+    .corpped-token {
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+
+    .deck-img {
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+
+    .title {
+      color: map-get($map: $pcs, $key: '400');
+      font-size: 25px;
+      font-weight: 400;
+      line-height: 28px;
+      letter-spacing: -0.375px;
+
+      @include md {
+        font-size: 22px;
+      }
+    }
+
+    .description {
+      color: map-get($map: $scs, $key: '300');
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 22px;
+      letter-spacing: -0.24px;
+      margin: 32px 0;
+
+      @include md {
+        font-size: 15px;
+      }
+    }
+  }
+
+  .staking-box {
+    position: relative;
+    border-radius: 15px;
+    background: linear-gradient(164deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.11) 100%);
+    box-shadow: 0px 4px 24px -1px rgba(0, 0, 0, 0.12);
+    backdrop-filter: blur(20px);
+    padding: 36px 25px;
+    margin-top: 20px;
+
+    @include md {
+      padding: 28px 22px;
+    }
+
+    .title {
+      color: map-get($map: $pcs, $key: '400');
+      font-size: 25px;
+      font-weight: 400;
+      line-height: 28px;
+      letter-spacing: -0.375px;
+
+      @include md {
+        margin-bottom: 30px;
+        font-size: 22px;
+      }
+    }
+
+    .tabs {
+      display: flex;
+
+      .item-box {
+        width: 122px;
+        color: map-get($map: $scs, $key: '200');
+        text-align: center;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 23.059px;
+        letter-spacing: -0.252px;
+        border-radius: 9px;
+        background: map-get($map: $pcs, $key: '200');
+        padding: 7px 22px;
+        cursor: pointer;
+
+        @include md {
+          width: 100%;
+        }
+
+        &:first-child {
+          margin-right: 9px;
+        }
+
+        &.active {
+          color: map-get($map: $pcs, $key: '100');
+        }
+      }
+    }
+
+    .number-matrix {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px 8px;
+      margin-top: 34px;
+      margin-bottom: 48px;
+
+      @include md {
+        grid-template-columns: repeat(1, 1fr);
+        gap: 8px;
+        margin-bottom: 36px;
+      }
+
+      .number-matrix-box {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-radius: 7px;
+        background: linear-gradient(164deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.11) 100%);
+        box-shadow: 0px 4px 24px -1px rgba(0, 0, 0, 0.12);
+        backdrop-filter: blur(20px);
+        padding: 16px 14px;
+
+        @include md {
+          padding: 12px 18px;
+        }
+
+        .label {
+          color: $purple;
+          font-size: 15px;
+          font-weight: 400;
+          line-height: 22px;
+          letter-spacing: -0.225px;
+          margin-right: 20px;
+        }
+
+        .value {
+          color: map-get($map: $scs, $key: '400');
+          font-size: 24px;
+          font-weight: 400;
+          line-height: 38px;
+          letter-spacing: -0.36px;
+
+          &.yellow {
+            color: map-get($map: $pcs, $key: '100');
+            font-size: 31px;
+            font-weight: 500;
+            line-height: 122.581%;
+            letter-spacing: -0.465px;
+          }
+
+          @include md {
+            font-size: 20px;
+
+            &.yellow {
+              font-size: 24px;
+            }
+          }
+        }
+      }
+
+    }
+
+    .stake-input-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 17px 22px;
+      border-radius: 9px;
+      border: 0.8px solid map-get($map: $scs, $key: '300');
+      background: linear-gradient(164deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.11) 100%);
+      box-shadow: 0px 4px 24px -1px rgba(0, 0, 0, 0.12);
+      backdrop-filter: blur(20px);
+      margin-bottom: 20px;
+
+      @include md {
+        padding: 14px 18px;
+      }
+
+      input {
+        height: 100%;
+        width: 100%;
+        flex-grow: 1;
+        background: transparent;
+        border: none;
+        outline: none;
+        color: map-get($map: $pcs, $key: '300');
+        font-size: 24px;
+        font-weight: 400;
+        line-height: normal;
+        letter-spacing: -0.36px;
+        padding-right: 30px;
+
+        @include md {
+          font-size: 21px;
+        }
+
+        &::-webkit-outer-spin-button,
+        &::-webkit-inner-spin-button {
+          -webkit-appearance: none;
+          margin: 0;
+        }
+      }
+
+      input[type=number] {
+        -moz-appearance: textfield;
+      }
+
+      .max-tab {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 31px;
+        padding: 7px 10px;
+        border-radius: 9px;
+        background: map-get($map: $pcs, $key: '100');
+        color: map-get($map: $scs, $key: '100');
+        text-align: center;
+        font-size: 13px;
+        font-weight: 500;
+        line-height: 169.231%;
+        letter-spacing: -0.195px;
+        flex-shrink: 0;
+        cursor: pointer;
+
+        @include md {
+          padding: 6px 12px;
+        }
+      }
+    }
+
+    .reward-label {
+      color: map-get($map: $scs, $key: '300');
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 137.5%;
+      letter-spacing: -0.24px;
+    }
+
+    .reward-value {
+      color: map-get($map: $scs, $key: '400');
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 22px;
+      letter-spacing: -0.24px;
+    }
+
+    .deposit-button {
+      @include md {
+        width: 100%;
+      }
+    }
+  }
+}

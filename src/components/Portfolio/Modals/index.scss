@@ -1,0 +1,494 @@
+.claim-status-modal {
+   .claim-status-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+
+      @include xxl {
+         .modal-title {
+            font-size: 24px;
+            line-height: 30px !important;
+         }
+      }
+
+      @include md {
+         .modal-title {
+            font-size: 22px;
+         }
+      }
+
+      @include xxl {
+         .status-chip {
+            font-size: 14px !important;
+            padding: 6px 20px !important;
+         }
+      }
+
+      .token-img {
+         height: 230px;
+         width: 240px;
+         margin-bottom: 38px;
+
+         @include xxl {
+            height: 210px;
+            width: 220px;
+            margin-bottom: 30px;
+         }
+
+         @include md {
+            height: 160px;
+            width: 170px;
+         }
+      }
+
+      .title {
+         font-weight: 600;
+         font-size: 48px;
+         line-height: 112%;
+         color: map-get($map: $ecs, $key: '100');
+         text-align: center;
+
+         &.successfull {
+            color: #00C738;
+         }
+
+         @include xxl {
+            font-size: 44px;
+         }
+
+         @include md {
+            font-size: 36px;
+         }
+      }
+
+      .desc {
+         font-weight: 500;
+         font-size: 24px;
+         line-height: 112%;
+         color: map-get($map: $pcs, $key: '400');
+         margin: 30px 0 39px 0;
+         text-align: center;
+
+         @include xxl {
+            font-size: 21px;
+            margin: 25px 0 32px 0;
+         }
+
+         @include md {
+            font-size: 19px;
+            margin: 22px 0 28px 0;
+         }
+      }
+
+      .transction-link {
+         font-size: 16px;
+         line-height: 138%;
+         text-decoration-line: underline;
+         color: map-get($map: $scs, $key: '400');
+         margin-left: 4px;
+
+         @include xxl {
+            font-size: 15px;
+         }
+
+         @include md {
+            font-size: 14px;
+         }
+      }
+
+      .eye-icon {
+         height: 22px;
+
+         @include md {
+            height: 18px;
+         }
+      }
+
+      .icon-container {
+         height: 45px;
+         width: 55px;
+         border-radius: 10px;
+         margin-right: 20px;
+         box-shadow: 0px 0px 13.5px 1.22727px rgba(255, 249, 236, 0.47);
+
+         @include md {
+            margin-right: 15px;
+
+            i {
+               font-size: 24px;
+            }
+         }
+      }
+
+      .claim-token-input-container {
+         padding: 16px 30px;
+         background: linear-gradient(112.59deg, rgba(255, 255, 255, 0.05) 15.05%, rgba(255, 255, 255, 0.11) 84.94%);
+         border: 1px solid map-get($scs, "400");
+         box-shadow: 0px 4px 24px -1px rgba(0, 0, 0, 0.12);
+         backdrop-filter: blur(20px);
+         border-radius: 15px;
+         margin-top: 40px;
+         margin-bottom: 16px;
+
+         @include md {
+            margin-top: 30px;
+            padding: 14px 20px;
+            margin-top: 30px;
+         }
+
+         label {
+            margin-bottom: 12px;
+         }
+
+         button {
+            width: 55px;
+            height: 35px;
+            border: none;
+            border-radius: 9px;
+            cursor: pointer;
+
+            &.bordered {
+               border: 1px solid map-get($pcs, "300");
+               background-color: transparent;
+            }
+
+            @include md {
+               width: 50px;
+               height: 30px;
+            }
+         }
+
+         input {
+            background-color: transparent;
+            border: none;
+            font-weight: 400;
+            font-size: 42px;
+            line-height: 40px;
+            box-sizing: border-box;
+
+            &:focus {
+               outline: none;
+            }
+
+            @include md {
+               font-size: 34px;
+               line-height: 42px;
+            }
+         }
+      }
+   }
+
+   .claimable-list-container {
+      .token-card {
+         padding: 25px;
+         background: linear-gradient(112.59deg, rgba(255, 255, 255, 0.05) 15.05%, rgba(255, 255, 255, 0.11) 84.94%);
+         box-shadow: 0px 4px 24px -1px rgba(0, 0, 0, 0.12);
+         backdrop-filter: blur(20px);
+         margin-bottom: 15px;
+
+         @include xxl {
+            padding: 20px;
+         }
+
+         @include md {
+            padding: 16px;
+         }
+
+         &:last-child {
+            margin-bottom: 0;
+         }
+
+         .claim-button {
+            height: 42px;
+            border: 1px solid map-get($pcs, "300");
+            background-color: transparent;
+
+            .rotate-loader{
+               height: 20px;
+               width: 20px;
+            }
+
+            span {
+               height: 12px;
+               width: 12px;
+            }
+
+            @include md {
+               width: 100%;
+               display: flex;
+               justify-content: center;
+               margin-top: 12px;
+
+               span {
+                  height: 8px;
+                  width: 8px;
+               }
+            }
+         }
+
+         .claim-days-text {
+            margin-top: 12px;
+         }
+
+         .top-label {
+            color: #BFBFBF;
+
+            span {
+               height: 4px;
+               width: 4px;
+               background-color: #859BC8;
+               border-radius: 50%;
+            }
+         }
+
+         .purple-text {
+            color: #859BC8;
+
+            @include xxl {
+               font-size: 14px !important;
+            }
+         }
+
+         @include xxl {
+            .token-value {
+               font-size: 25px !important;
+               line-height: 32px !important;
+            }
+         }
+
+         @include xxl {
+            .claim-date {
+               margin-bottom: 8px !important;
+            }
+
+            .card-title {
+               font-size: 15px !important;
+               margin-bottom: 10px !important;
+            }
+         }
+      }
+   }
+}
+
+
+
+.stake-cards-modal{
+
+   @include md{
+      display: block;
+      padding: 0;
+   }
+   .stake-card-modal-wrapper{
+      width: 1090px;
+      padding: 40px;
+
+      @include md{
+         top: 0;
+         transform: translateY(0);
+         padding: 20px;
+      }
+
+      .title{
+         font-family: Archivo SemiExpanded;
+         font-size: 42.234px;
+         font-weight: 700;
+         line-height: 46px;
+         color: #FFF; 
+         letter-spacing: -0.634px;
+
+         span{
+            color: var(--primary-100, #FFBE06);
+         }
+
+         @include md{
+            font-size: 26px;
+            font-weight: 600;
+            line-height: 27px;
+         }
+      }
+
+      .description{
+         color: var(--secondary-800, #AEAEAE);
+         font-family: Archivo SemiExpanded;
+         font-size: 16.424px;
+         font-style: normal;
+         font-weight: 400;
+         line-height: 23.463px; /* 142.857% */
+         letter-spacing: -0.246px;
+         margin-top: 10px;
+         margin-bottom: 32px;
+      }
+
+      .stake-card-wrapper{
+         display: grid;
+         grid-template-columns: repeat(3, 1fr);
+         gap: 24px;
+
+         @include md{
+            grid-template-columns: repeat(1, 1fr);
+         }
+         
+         .stake-box{
+            padding: 22px 28px;
+            border-radius: 13.198px;
+            background: linear-gradient(113deg, rgba(255, 255, 255, 0.05) 15.05%, rgba(255, 255, 255, 0.11) 84.94%);
+            box-shadow: 0px 3.51948px 21.11688px -0.87987px rgba(0, 0, 0, 0.12);
+            backdrop-filter: blur(17.597402572631836px);
+
+            &-title{
+               color: #FFF9EC;
+               font-family: Archivo SemiExpanded;
+               font-size: 23.463px;
+               font-style: normal;
+               font-weight: 500;
+               line-height: 24.636px;
+               letter-spacing: -0.352px;
+               
+               span{
+                  color: #FFBE06;
+               }
+            }
+
+            .pool-icon-container{
+               display: flex;
+               width: 42.234px;
+               height: 42.234px;
+               padding: 6.719px 9.599px;
+               flex-direction: column;
+               justify-content: center;
+               align-items: center;
+               border-radius: 8.639px;
+               background: #182C56;
+               box-shadow: 0px 0px 10.55844px 0.95986px rgba(255, 249, 236, 0.47);
+               margin-right: 16px;
+            }
+
+            .apy-card {
+               background: #1B3262;
+               border-radius: 11px;
+               padding: 7px;
+               display: grid;
+               grid-template-columns: repeat(2, 1fr);
+               gap: 0;
+               margin: 29px 0 5px 0;
+         
+               @include md {
+                  margin: 22px 0 5px 0;
+               }
+         
+               >div {
+                  display: flex;
+                  flex-direction: column;
+                  align-items: center;
+                  justify-content: center;
+                  padding: 8px;
+         
+                  .tooltip-icon-container{
+                     position: absolute;
+                     top: 0;
+                     right: 0;
+         
+                     svg{
+                        height: 16px;
+                        width: auto;
+                        path{
+                           fill: map-get($scs, "400");
+                           fill-opacity: 1;
+                        }
+                     }
+                  }
+               }
+         
+               >div:first-child {
+                  border-right: 1px solid #859BC8;
+               }
+         
+               .label {
+                  font-weight: 400;
+                  font-size: 14px;
+                  line-height: 15px;
+                  color: #859BC8;
+                  margin-bottom: 9px;
+         
+                  @include md {
+                     margin-bottom: 8px;
+                  }
+               }
+         
+               .apy-value {
+                  font-weight: 600;
+                  font-size: 28px;
+                  line-height: 30px;
+                  color: #FFBE06;
+         
+                  @include xxl {
+                     font-size: 24px;
+                     line-height: 26px;
+                  }
+               }
+         
+               .lock-value {
+                  font-weight: 700;
+                  font-size: 28px;
+                  line-height: 30px;
+                  letter-spacing: -0.035em;
+                  color: map-get($map: $scs, $key: '300');
+         
+                  @include xxl {
+                     font-size: 24px;
+                     line-height: 26px;
+                  }
+               }
+            }
+         
+            .tvl-wrapper {
+               background: #1B3262;
+               box-shadow: 0px 4px 24px -1px rgba(0, 0, 0, 0.12);
+               backdrop-filter: blur(20px);
+               border-radius: 7px;
+               padding: 0 20px;
+               height: 38px;
+               margin-bottom: 5px;
+         
+               .label {
+                  font-weight: 400;
+                  font-size: 14px;
+                  line-height: 15px;
+                  color: #859BC8;
+               }
+         
+               .tvl-value {
+                  font-weight: 400;
+                  font-size: 14px;
+                  color: map-get($map: $scs, $key: '400');
+               }
+            }
+
+            .stake-button{
+               margin-top: 16px;
+               margin-bottom: 11px;
+               background: map-get($map: $pcs, $key: '100');
+               border-radius: 6px;
+               width: 100%;
+               border: none;
+               cursor: pointer;
+               font-size: 16px;
+               font-weight: 600;
+               line-height: 138%;
+               text-align: center;
+               color: map-get($map: $scs, $key: '100');
+               height: 42px;
+
+               @include xxl {
+                  font-size: 15px;
+               }
+
+               @include md {
+                  height: 42px;
+               }
+            }
+         }
+      }
+   }
+}

@@ -1,0 +1,215 @@
+$header : ("h1":(600:("font-size": 48px,
+         "line-height": 54px)),
+   "h2":(600: ("font-size": 42px,
+         "line-height": 46px)));
+
+$subheader: (
+   "h1" : (
+      600: (
+         "font-size": 48px,
+         "line-height": 54px
+      ),
+   ),
+   "h2":(
+      600: (
+         "font-size": 38px,
+         "line-height": 35px
+      ),
+      700 : (
+         "font-size": 38px,
+         "line-height": 36px
+      ),
+      400 : (
+         "font-size": 38px,
+         "line-height": 36px
+      )
+   ),
+   "h3":(
+      500 : (
+         "font-size": 36px,
+         "line-height": 40px
+      ),
+      600: (
+         "font-size": 36px,
+         "line-height": 40px
+      ),
+      700 : (
+         "font-size": 34px,
+         "line-height": 36px
+      )
+   ),
+   "h4":(600: ("font-size": 30px,
+         "line-height": 44px),
+      500: ("font-size": 30px,
+         "line-height": 44px),
+      400: ("font-size": 30px,
+         "line-height": 38px),
+   ),
+   "h5":(600: ("font-size": 24px,
+         "line-height": 27px),
+      500: ("font-size": 24px,
+         "line-height": 27px),
+      400: ("font-size": 24px,
+         "line-height": 27px),
+   ),
+   "h6":(700: ("font-size": 14px,
+         "line-height": 22px),
+      600: ("font-size": 14px,
+         "line-height": 22px),
+      500: ("font-size": 14px,
+         "line-height": 22px),
+      400: ("font-size": 14px,
+         "line-height": 22px),
+   ),
+);
+
+$body: (
+   "p":(400:("font-size": 16px,
+         "line-height": 22px,
+      ),
+      500:("font-size": 16px,
+         "line-height": 22px,
+      ),
+      600:("font-size": 16px,
+         "line-height": 22px,
+      ),
+      700:("font-size": 16px,
+         "line-height": 22px,
+      )),
+
+   "text" : (
+      400 : (
+         "font-size" : 26px,
+         "line-height" : normal
+      ),
+      500 : (
+         "font-size" : 25px,
+         "line-height" : 25px
+      )
+   ),
+   "md": (600:("font-size": 20px,
+         "line-height": 22px,
+      ),
+      500:("font-size": 20px,
+         "line-height": 22px,
+      ),
+      400:("font-size": 20px,
+         "line-height": 22px,
+      ),
+   ),
+   "sm":(400:("font-size": 12px,
+         "line-height": 15px),
+      500:("font-size": 12px,
+         "line-height": 16px),
+      600: ("font-size": 12px,
+         "line-height": 20px)),
+   "fine": (400:("font-size": 9px,
+         "line-height": 14px),
+      500:("font-size": 12px,
+         "line-height": 16px),
+      600:("font-size": 9px,
+         "line-height": 14px),
+   )
+);
+
+// Header classes
+@each $level,
+$weights in $header {
+
+   @each $weight,
+   $style in $weights {
+      .header-#{$level}-#{$weight} {
+         font-size: map-get($style, "font-size");
+         font-weight: $weight;
+         line-height: map-get($style, "line-height");
+         font-family: "Archivo SemiExpanded", sans-serif;
+         letter-spacing: -0.015em;
+      }
+   }
+}
+
+// Subheader classes
+@each $level,
+$weights in $subheader {
+
+   @each $weight,
+   $style in $weights {
+      .subheader-#{$level}-#{$weight} {
+         font-size: map-get($style, "font-size");
+         font-weight: $weight;
+         line-height: map-get($style, "line-height");
+         font-family: "Archivo SemiExpanded", sans-serif;
+         letter-spacing: -0.015em;
+      }
+   }
+}
+
+// body classes
+@each $level,
+$weights in $body {
+
+   @each $weight,
+   $style in $weights {
+      .body-#{$level}-#{$weight} {
+         font-size: map-get($style, "font-size");
+         font-weight: $weight;
+         line-height: map-get($style, "line-height");
+         font-family: "Archivo SemiExpanded", sans-serif;
+         letter-spacing: -0.015em;
+      }
+   }
+}
+
+// Header classes for mobile
+@each $level,
+$weights in $header {
+
+   @each $weight,
+   $style in $weights {
+      .header-mobile-#{$level}-#{$weight} {
+         @include md {
+            font-size: map-get($style, "font-size");
+            font-weight: $weight;
+            line-height: map-get($style, "line-height");
+            font-family: "Archivo SemiExpanded", sans-serif;
+            letter-spacing: -0.015em;
+         }
+      }
+   }
+}
+
+// Subheader classes for mobile
+@each $level,
+$weights in $subheader {
+
+   @each $weight,
+   $style in $weights {
+      .subheader-mobile-#{$level}-#{$weight} {
+         @include md {
+            font-size: map-get($style, "font-size");
+            font-weight: $weight;
+            line-height: map-get($style, "line-height");
+            font-family: "Archivo SemiExpanded", sans-serif;
+            letter-spacing: -0.015em;
+         }
+      }
+   }
+}
+
+// body classes for mobile
+@each $level,
+$weights in $body {
+
+   @each $weight,
+   $style in $weights {
+      .body-mobile-#{$level}-#{$weight} {
+         @include md {
+            font-size: map-get($style, "font-size") !important;
+            font-weight: $weight;
+            line-height: map-get($style, "line-height") !important;
+            font-family: "Archivo SemiExpanded", sans-serif;
+            letter-spacing: -0.015em;
+         }
+      }
+   }
+}

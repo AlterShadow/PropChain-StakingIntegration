@@ -1,0 +1,236 @@
+.pool-card {
+   background: linear-gradient(112.59deg, rgba(255, 255, 255, 0.05) 15.05%, rgba(255, 255, 255, 0.11) 84.94%);
+   box-shadow: 0px 4px 24px -1px rgba(0, 0, 0, 0.12);
+   backdrop-filter: blur(20px);
+   border-radius: 9px;
+   padding: 26px 32px;
+
+   @include md {
+      padding: 26px 14px;
+   }
+
+   .icon-container {
+      height: 48px;
+      width: 48px;
+      background: map-get($map: $scs, $key: '100');
+      box-shadow: 0px 0px 12px 1px rgba(255, 249, 236, 0.47);
+      border-radius: 9px;
+
+      @include xxl {
+         height: 44px;
+         width: 44px;
+
+         img {
+            height: 20px;
+         }
+      }
+   }
+
+   .title {
+      font-size: 22px;
+      line-height: 127%;
+      color: map-get($map: $pcs, $key: '100');
+      margin-left: 20px;
+
+      @include xxl {
+         font-size: 20px;
+      }
+   }
+
+   .apy-card {
+      background: #1B3262;
+      border-radius: 11px;
+      padding: 7px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0;
+      margin: 29px 0 5px 0;
+
+      @include md {
+         margin: 22px 0 5px 0;
+      }
+
+      >div {
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+         justify-content: center;
+         padding: 8px;
+
+         .tooltip-icon-container{
+            position: absolute;
+            top: 0;
+            right: 0;
+
+            svg{
+               height: 16px;
+               width: auto;
+               path{
+                  fill: map-get($scs, "400");
+                  fill-opacity: 1;
+               }
+            }
+         }
+      }
+
+      >div:first-child {
+         border-right: 1px solid #859BC8;
+      }
+
+      .label {
+         font-weight: 400;
+         font-size: 14px;
+         line-height: 15px;
+         color: #859BC8;
+         margin-bottom: 9px;
+
+         @include md {
+            margin-bottom: 8px;
+         }
+      }
+
+      .apy-value {
+         font-weight: 600;
+         font-size: 28px;
+         line-height: 30px;
+         color: #FFBE06;
+
+         @include xxl {
+            font-size: 24px;
+            line-height: 26px;
+         }
+      }
+
+      .lock-value {
+         font-weight: 700;
+         font-size: 28px;
+         line-height: 30px;
+         letter-spacing: -0.035em;
+         color: map-get($map: $scs, $key: '300');
+
+         @include xxl {
+            font-size: 24px;
+            line-height: 26px;
+         }
+      }
+   }
+
+   .tvl-wrapper {
+      background: #1B3262;
+      box-shadow: 0px 4px 24px -1px rgba(0, 0, 0, 0.12);
+      backdrop-filter: blur(20px);
+      border-radius: 7px;
+      padding: 0 20px;
+      height: 38px;
+      margin-bottom: 5px;
+
+      .label {
+         font-weight: 400;
+         font-size: 14px;
+         line-height: 15px;
+         color: #859BC8;
+      }
+
+      .tvl-value {
+         font-weight: 400;
+         font-size: 14px;
+         color: map-get($map: $scs, $key: '400');
+      }
+   }
+
+
+   .connect-wallet-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      background: transparent;
+      border: 0.8px solid map-get($map: $scs, $key: '400');
+      padding: 10px;
+      border-radius: 6px;
+      background: #182C56;
+      opacity: 0.65;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 138%;
+      text-align: center;
+      color: map-get($map: $pcs, $key: '300');
+      margin-top: 28px;
+
+      i {
+         margin-right: 5px;
+      }
+
+      @include xxl {
+         font-size: 15px;
+      }
+
+      @include md {
+         height: 42px;
+      }
+
+      svg{
+         path{
+            fill: map-get($pcs, "300");
+            fill-opacity: 1;
+         }
+      }
+   }
+
+   .stake-button {
+      margin-top: 20px;
+      margin-bottom: 11px;
+      background: map-get($map: $pcs, $key: '100');
+      border-radius: 6px;
+      width: 100%;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 138%;
+      text-align: center;
+      color: map-get($map: $scs, $key: '100');
+      height: 42px;
+
+      @include xxl {
+         font-size: 15px;
+      }
+
+      @include md {
+         height: 42px;
+      }
+   }
+
+   .unstake-button {
+      width: 100%;
+      height: 42px;
+      background: map-get($map: $scs, $key: '100');
+      opacity: 0.25;
+      border: 0.8px solid map-get($map: $scs, $key: '400');
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 138%;
+      color: map-get($map: $pcs, $key: '300');
+
+      @include xxl {
+         font-size: 15px;
+      }
+
+      @include md {
+         height: 42px;
+      }
+
+
+      &.acive {
+         opacity: 1;
+         color: map-get($map: $scs, $key: '400');
+         font-size: 14px;
+
+         img {
+            margin-right: 8px;
+            height: 20px;
+         }
+      }
+   }
+}

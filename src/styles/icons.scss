@@ -1,0 +1,108 @@
+@charset "UTF-8";
+
+$icons: (
+   "cross" : "\49",
+   "3d" : "\61",
+   "360" : "\62",
+   "area" : "\63",
+   "calculator" : "\64",
+   "add" : "\65",
+   "arrow-left" : "\66",
+   "arrow-right" : "\67",
+   "backspace" : "\68",
+   "bank" : "\69",
+   "bathroom" : "\6a",
+   "bed" : "\6b",
+   "bedroom" : "\6c",
+   "browse" : "\6d",
+   "building" : "\6e",
+   "calendar" : "\6f",
+   "card-declined" : "\70",
+   "cart" : "\71",
+   "chat" : "\72",
+   "check" : "\73",
+   "chevron-down" : "\74",
+   "chevron-left" : "\75",
+   "chevron-right" : "\76",
+   "chevron-up" : "\77",
+   "clock" : "\78",
+   "bell" : "\79",
+   "bolt" : "\7a",
+   "eye-unhide" : "\41",
+   "eye" : "\42",
+   "external-link" : "\43",
+   "download" : "\44",
+   "desktop" : "\45",
+   "deposit" : "\46",
+   "dashboard" : "\47",
+   "copy" : "\4a",
+   "convert" : "\4b",
+   "coins" : "\4c",
+   "coin-growth" : "\4d",
+   "file" : "\4e",
+   "file-expired" : "\4f",
+   "filter" : "\50",
+   "gallery" : "\51",
+   "growth" : "\52",
+   "hamburger" : "\53",
+   "history" : "\54",
+   "icon" : "\55",
+   "label" : "\56",
+   "list-view" : "\57",
+   "loading" : "\58",
+   "lock" : "\59",
+   "logout" : "\5a",
+   "map" : "\30",
+   "minus" : "\31",
+   "mobile" : "\32",
+   "more" : "\33",
+   "p2p" : "\34",
+   "pen" : "\35",
+   "pencil" : "\36",
+   "play" : "\37",
+   "plus" : "\38",
+   "portfolio" : "\39",
+   "quetsion" : "\21",
+   "rooms" : "\22",
+   "search" : "\23",
+   "wallet" : "\24",
+   "users" : "\25",
+   "user" : "\26",
+   "triangle-up" : "\27",
+   "triangle-down" : "\28",
+   "trashcan" : "\29",
+   "swap" : "\2a",
+   "sort" : "\2b",
+   "shop" : "\2c",
+   "shield-warning" : "\2d",
+   "shield-check" : "\2e",
+   "share" : "\2f",
+   "setting" : "\3a",
+   "withdawal-check" : "\3b",
+   "withdawal-cross" : "\3c",
+   "withdraw" : "\3d",
+   "withdrawal-processed" : "\3e"
+);
+
+.pc-icon {
+   font-family: "icon-font", sans-serif !important;
+   content: attr(data-icon);
+   font-style: normal !important;
+   font-weight: normal !important;
+   font-variant: normal !important;
+   text-transform: none !important;
+   speak: none;
+   line-height: 1;
+   -webkit-font-smoothing: antialiased;
+   -moz-osx-font-smoothing: grayscale;
+   filter: none !important;
+   color: inherit;
+
+   @each $name,
+   $glyph in $icons {
+      &.pc-icon-#{$name}:before {
+         content: $glyph;
+         display: inline-block;
+      }
+   }
+}

@@ -1,0 +1,15 @@
+export const getAppKey = (subKey: string) => `app/${subKey}`;
+export const getUIKey = (subKey: string) => `ui/${subKey}`;
+export const getWalletKey = (subKey: string) => `wallet/${subKey}`;
+export const getStakingKey = (subKey: string) => `staking/${subKey}`;
+export const getPortfolioKey = (subKey: string) => `portfolio/${subKey}`;
+export const getEscrowKey = (subKey: string) => `escrow/${subKey}`;
+export const getGovKey = (subKey: string) => `gov/${subKey};`;
+export const getDebtKey = (subKey: string) => `debt/${subKey}`;
+export const getFuturesKey = (subKey: string) => `futures/${subKey}`;
+export const getSynthsKey = (subKey: string) => `synths/${subKey}`;
+export const getExchangeKey = (subKey: string) => `exchange/${subKey}`;
+export const getOrdersKey = (subKey: string) => `orders/${subKey}`;
+export const getFaucetKey = (subKey: string) => `faucet/${subKey}`;
+export const getBridgeKey = (subKey: string) => `bridge/${subKey}`;
+export const getLiquidationKey = (subKey: string) => `liquidation/${subKey}`;

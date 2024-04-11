@@ -1,0 +1,99 @@
+.members-page {
+  box-sizing: border-box;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  .banner-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    // min-height: 100%;
+    width: 100%;
+    background: url("../../static/assets/Member/banner.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    border-radius: 15px;
+    box-shadow: 0px 4px 24px -1px rgba(0, 0, 0, 0.12);
+    padding: 35px 56px;
+
+    @include md {
+      padding: 35px 20px;
+      background-size: cover;
+      background-position: center center;
+    }
+
+    .title-container {
+      max-width: 690px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+      margin-top: 14px;
+
+      @include xxl {
+        max-width: 500px;
+      }
+
+      .title {
+        font-weight: 500;
+        font-size: 47px;
+        line-height: 51px;
+        color: map-get($map: $pcs, $key: '400');
+
+        div {
+          color: map-get($map: $pcs, $key: '100');
+        }
+
+        @include xxl {
+          font-size: 32px;
+          line-height: 40px;
+        }
+
+        @include md {
+          font-size: 26px;
+          line-height: 29px;
+        }
+      }
+
+      .desc {
+        font-weight: 400;
+        font-size: 17px;
+        line-height: 25px;
+        letter-spacing: -0.015em;
+        color: map-get($map: $scs, $key: '400');
+        margin-top: 30px;
+        margin-bottom: 30px;
+        padding: 0 50px;
+
+        @include xxl {
+          font-size: 15px;
+          line-height: 22px;
+          margin-top: 16px;
+          margin-bottom: 28px;
+        }
+
+        @include md {
+          font-size: 14px;
+          line-height: 21px;
+          margin-top: 14px;
+          margin-bottom: 22px;
+          padding: 0;
+        }
+      }
+
+      .join-tg-button {
+        height: 52px;
+
+        svg {
+          margin-left: 5px;
+        }
+      }
+    }
+  }
+}

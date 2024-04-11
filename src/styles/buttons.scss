@@ -1,0 +1,244 @@
+.button-primary {
+   color: map-get($scs, "100");
+   border: 0.8px solid map-get($scs, "100") !important;
+   background-color: map-get($pcs, "100");
+   cursor: pointer;
+
+   &:hover {
+      background-color: map-get($scs, "700");
+      border: 1.2px solid map-get($scs, "100");
+      color: map-get($scs, "100");
+   }
+
+   img,
+   i:not(.pc-icon) {
+      filter: invert(11%) sepia(46%) saturate(2827%) hue-rotate(205deg) brightness(91%) contrast(88%) !important;
+   }
+
+   svg {
+      fill: map-get($scs, "100") !important;
+   }
+}
+
+.button-primary-dark {
+   background-color: map-get($scs, "100");
+   color: white !important;
+   border: 0.8px solid map-get($scs, "400");
+   cursor: pointer;
+
+   &:hover {
+      background-color: map-get($pcs, "200");
+      border: 1.2px solid map-get($scs, "100");
+   }
+
+   img,
+   i:not(.pc-icon) {
+      filter: invert(100%) sepia(0%) saturate(2%) hue-rotate(155deg) brightness(102%) contrast(101%);
+   }
+
+   svg {
+      fill: white !important;
+   }
+}
+
+.button-secondary {
+   background-color: map-get($scs, "400");
+   border: 0.8px solid map-get($scs, "100");
+   color: map-get($scs, "100");
+   cursor: pointer;
+
+   &:hover {
+      background-color: map-get($pcs, "300");
+      border: 1.2px solid map-get($scs, "100");
+      color: map-get($scs, "100");
+   }
+
+   img,
+   i:not(.pc-icon) {
+      filter: invert(10%) sepia(19%) saturate(6624%) hue-rotate(205deg) brightness(91%) contrast(109%) !important;
+   }
+
+   svg {
+      fill: map-get($scs, "200") !important;
+   }
+}
+
+.button-tertiary {
+   background-color: transparent !important;
+   border: 0.8px solid map-get($scs, "100");
+   color: map-get($scs, "100");
+   cursor: pointer;
+
+   &:hover {
+      border: 1.2px solid map-get($pcs, "200");
+      color: map-get($pcs, "200");
+   }
+
+   img,
+   i:not(.pc-icon) {
+      filter: invert(10%) sepia(19%) saturate(6624%) hue-rotate(205deg) brightness(91%) contrast(109%) !important;
+   }
+
+   svg {
+      fill: map-get($scs, "200") !important;
+   }
+}
+
+.button-primary,
+.button-primary-dark,
+.button-secondary,
+.button-tertiary {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   border-radius: 6px;
+   transition: all 0.2s ease-in;
+
+   &:disabled {
+      background-color: map-get($scs, "900") !important;
+      color: map-get($scs, "800") !important;
+      cursor: not-allowed;
+      border: 0.8px solid map-get($scs, "800") !important;
+   }
+}
+
+.button-lg {
+   padding: 15px 20px !important;
+   min-width: 192px;
+   height: 40px;
+   font-size: 16px !important;
+   font-weight: 600 !important;
+   line-height: 22px !important;
+   letter-spacing: -0.015em !important;
+}
+
+.button-md {
+   padding: 10px 15px !important;
+   min-width: 79px;
+   font-size: 14px !important;
+   font-weight: 600;
+   line-height: 22px;
+   letter-spacing: -0.015em;
+   height: 38px;
+}
+
+.button-sm {
+   padding: 15px !important;
+   min-width: 72px;
+   font-size: 12px !important;
+   font-weight: 600;
+   line-height: 14px;
+   letter-spacing: -0.015em;
+   height: 30px;
+}
+
+.btn-sm {
+   font-size: 12px;
+   padding: 15px;
+   line-height: 20px;
+   gap: 3px;
+   height: 30px;
+   width: 94.56px;
+   border-radius: 6px !important;
+   letter-spacing: -0.015em;
+}
+
+.icon-b-sm {
+   display: flex;
+   flex-direction: row;
+   justify-content: center;
+   align-items: center;
+   padding: 11px 107px;
+   width: 32px;
+   height: 32px;
+   background: map-get($scs, "100");
+   border-radius: 6px;
+}
+
+.icon-btn-sm {
+   width: 30px;
+   height: 30px;
+}
+
+.icon-btn-md {
+   width: 42px;
+   height: 42px;
+}
+
+.icon-btn-lg {
+   width: 50px;
+   height: 50px;
+}
+
+.icon-btn-sm,
+.icon-btn-md,
+.icon-btn-lg {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+.special-button {
+   border-radius: 3px;
+   background-color: map-get($scs, "400");
+   padding: 5px;
+   font-size: 12px;
+   line-height: 14px;
+   font-weight: 400;
+}
+
+///badges
+
+.badge-for-sale {
+   color: white;
+   background-color: map-get($sucs, "100");
+}
+
+.badge-closed {
+   background-color: map-get($pcs, "100");
+   color: map-get($pcs, "200");
+}
+
+.badge-exited {
+   background-color: map-get($ecs, "100");
+   color: white;
+}
+
+.badge-closed,
+.badge-exited,
+.badge-for-sale {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+.badge-radius {
+   border-radius: 6px;
+}
+
+.badge-radius-lg {
+   border-radius: 13px;
+}
+
+.badge-primary {
+   background-color: map-get($pcs, "100");
+   color: map-get($scs, "100");
+}
+
+.badge-secondary {
+   background-color: map-get($scs, "400");
+   color: map-get($pcs, "200");
+}
+
+.badge-primary-dark {
+   background-color: map-get($scs, "100");
+   color: white;
+}
+
+.bagde-md {
+   padding: 3px 0.5rem;
+}
+
+.badge-sm {
+   padding: 0.25rem 0.5rem;
+}

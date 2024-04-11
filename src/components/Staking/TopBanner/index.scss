@@ -1,0 +1,236 @@
+   .top-banner {
+      background: url("../../../static/assets/Staking/real-stake-bg.png");
+      box-shadow: 0px 4px 24px -1px rgba(0, 0, 0, 0.12);
+      background-size: cover;
+      background-repeat: no-repeat;
+      border-radius: 15px;
+      overflow: hidden;
+
+      @include md {
+         background-attachment: fixed;
+         background-size: cover;
+      }
+
+      .top-banner-bg {
+         padding: 16px 48px 16px 32px;
+         display: flex;
+         justify-content: space-between;
+         align-items: center;
+         gap: 40px;
+         background: linear-gradient(249deg, rgba(42, 71, 133, 0.61) 0%, #182C56 100%);
+
+         @include xl {
+            display: block;
+            padding: 22px 32px;
+         }
+
+         @include md {
+            display: block;
+            padding: 32px 14px;
+         }
+      }
+
+      .bottom-left-img {
+         position: absolute;
+         left: 0;
+         bottom: 0;
+         z-index: 0;
+      }
+
+      .active-staking {
+         color: map-get($map: $sucs, $key: '200');
+
+         >span {
+            display: block;
+            width: 10px;
+            height: 10px;
+            background: map-get($map: $sucs, $key: '100');
+            margin-right: 10px;
+            flex-shrink: 0;
+            border-radius: 50%;
+
+            @include md {
+               width: 8px;
+               height: 8px;
+               margin-right: 8px;
+            }
+         }
+      }
+
+      .real-stake-title {
+         font-size: 40px;
+         font-weight: 500;
+         line-height: 36px;
+         margin: 30px 0 18px 0;
+
+         @include xxl {
+            font-size: 32px;
+         }
+
+         @include md {
+            margin: 20px 0 14px 0;
+            font-size: 34px;
+         }
+      }
+
+      .desc {
+         font-weight: 300;
+         font-size: 16px;
+         line-height: 135%;
+         max-width: 540px;
+         color: map-get($map: $scs, $key: '400');
+
+         @include xxl {
+            font-size: 14px;
+         }
+
+         @include md {
+            margin-bottom: 20px;
+         }
+      }
+
+
+      .stake-details-card {
+         background: linear-gradient(112.59deg, rgba(255, 255, 255, 0.07) 15.05%, rgba(255, 255, 255, 0.05) 84.94%);
+         box-shadow: 0px 4px 24px -1px rgba(0, 0, 0, 0.12);
+         backdrop-filter: blur(20px);
+         border-radius: 15px;
+         min-width: 460px;
+         padding: 19px 14px;
+         margin-bottom: 16px;
+         margin-left: 30px;
+         height: auto;
+
+         &:last-child {
+            margin-bottom: 0;
+         }
+
+         @include xl {
+            margin-left: 0;
+         }
+
+         @include md {
+            padding: 12px 14px;
+            min-width: 100%;
+            height: 60px;
+            overflow: hidden;
+            transition: height 0.3s;
+            margin-left: 0px;
+         }
+
+         .pc-icon-chevron-down {
+            transition: all 0.3s;
+         }
+
+         &.open {
+            @include md {
+               height: 128px;
+            }
+
+            .pc-icon-chevron-down {
+               transform: rotate(-180deg);
+            }
+         }
+
+         .icon-container {
+            background: map-get($map: $scs, $key: '100');
+            box-shadow: 0px 0px 12px 1.09091px rgba(255, 249, 236, 0.47);
+            border-radius: 9px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 48px;
+            width: 48px;
+            margin-right: 26px;
+
+            @include xxl {
+               height: 42px;
+               width: 42px;
+            }
+
+            @include md {
+               height: 35px;
+               width: 35px;
+               margin-right: 16px;
+
+               i {
+                  font-size: 19px;
+                  margin-top: 3px;
+               }
+            }
+
+            i {
+               margin-top: 3px;
+            }
+         }
+
+         .label {
+            color: rgba(255, 255, 255, 0.58);
+            margin-bottom: 12px;
+
+            @include xxl {
+               font-size: 15px;
+               margin-bottom: 8px;
+            }
+
+            @include md {
+               font-size: 14px;
+               margin-bottom: 0;
+            }
+         }
+
+         .amount {
+            font-weight: 400;
+            font-size: 32px;
+            line-height: 28px;
+
+            @include xxl {
+               font-size: 26px;
+            }
+
+            @include md {
+               font-size: 26px;
+               padding-left: 51px;
+               margin-top: 12px;
+            }
+
+            span {
+               font-size: 24px;
+               line-height: 26px;
+
+               @include md {
+                  font-size: 20px;
+                  line-height: 22px;
+               }
+            }
+         }
+
+         .pools-pill {
+            padding: 4px 8px;
+            background: map-get($map: $pcs, $key: '100');
+            width: fit-content;
+            height: fit-content;
+            border-radius: 6px;
+            margin-bottom: 10px;
+            font-size: 13px;
+            font-weight: 600;
+            color: map-get($map: $scs, $key: '100');
+         }
+
+         .total-propc {
+            font-size: 16px;
+            line-height: 138%;
+            color: rgba(255, 255, 255, 0.7);
+
+            @include xxl {
+               font-size: 14px;
+            }
+
+            @include md {
+               margin-top: 8px;
+               font-size: 15px;
+               padding-left: 51px;
+            }
+         }
+      }
+   }

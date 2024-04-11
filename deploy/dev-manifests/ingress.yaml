@@ -1,0 +1,28 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: token-dashboard-ui-dev-ingress
+  namespace: token-dashboard-ui-dev
+  annotations:
+    networking.gke.io/managed-certificates: dapp-ui-dev-certificate
+    kubernetes.io/ingress.class: gce
+    kubernetes.io/ingress.global-static-ip-name: token-dashboard-ui-dev-ingress
+    # networking.gke.io/v1beta1.FrontendConfig: token-dashboard-ui-dev-frontend-config
+spec:
+  ingressClassName: gce
+  # defaultBackend:
+  #   service:
+  #     name: token-dashboard-ui-dev-service
+  #     port:
+  #       number: 80
+  rules:
+  - host: dapp.dev.propchain.io
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: token-dashboard-ui-dev-service
+            port:
+              number: 80

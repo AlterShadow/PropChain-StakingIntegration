@@ -1,0 +1,58 @@
+.maintenance-page {
+   height: 100vh;
+   width: 100vw;
+   background: url("../../static/assets/maintenance-mode.png");
+   background-size: cover;
+   background-position: center center;
+   background-repeat: no-repeat;
+   display: grid;
+   place-items: center;
+   text-align: center;
+
+   .card {
+      background: linear-gradient(112.59deg, rgba(255, 255, 255, 0.05) 15.05%, rgba(255, 255, 255, 0.11) 84.94%);
+      box-shadow: 0px 4px 24px -1px rgba(0, 0, 0, 0.12);
+      backdrop-filter: blur(20px);
+      border-radius: 22px;
+      padding: 40px 20px 20px 20px;
+      max-width: 556px;
+
+      @media(max-width: 768px) {
+         width: 90%;
+      }
+
+      .title {
+         font-weight: 600;
+         font-size: 32px;
+         line-height: 54px;
+         color: #FFBE06;
+
+         @media(max-width: 768px) {
+            font-size: 24px;
+         }
+      }
+
+      .desc {
+         font-weight: 500;
+         font-size: 19px;
+         line-height: 33px;
+         text-align: center;
+         color: #CADCFF;
+         margin-top: 30px;
+
+         @media(max-width: 768px) {
+            font-size: 17px;
+            margin-top: 15px;
+            line-height: 22px;
+         }
+      }
+   }
+
+   .logo {
+      position: absolute;
+      top: 100px;
+      left: 50%;
+      transform: translateX(-50%);
+      height: 30px;
+   }
+}

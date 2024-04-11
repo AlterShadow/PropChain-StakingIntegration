@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dapp-ui-deployment
+  namespace: dapp-ui
+  labels:
+    app: dapp-ui
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: dapp-ui
+  template:
+    metadata:
+      labels:
+        app: dapp-ui
+    spec:
+      containers:
+        - name: dapp-container
+          image: europe-west1-docker.pkg.dev/creditsystem/others/dapp-ui:7987cde-20231012
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 80
+              name: dapp

@@ -1,0 +1,236 @@
+.propc-price-card {
+
+   @include xl {
+      margin-bottom: 30px;
+   }
+
+   @include md {
+      margin-bottom: 20px;
+      background: transparent !important;
+      padding: 0 !important;
+      backdrop-filter: 0;
+   }
+
+   .propc-label {
+      font-weight: 400;
+      font-size: 19px;
+      line-height: 22px;
+      color: #859BC8;
+
+      @include xxl {
+         font-size: 16px;
+         line-height: 21px;
+      }
+   }
+
+   .propc-price {
+      font-size: 48px;
+      font-weight: 400;
+      line-height: 54px;
+      letter-spacing: -0.025em;
+      color: map-get($map: $pcs, $key: '300');
+
+      span {
+         font-weight: 400;
+         font-size: 30px;
+         line-height: 127%;
+      }
+
+      @include xxl {
+         font-size: 36px;
+         line-height: 44px;
+
+         span {
+            font-size: 24px;
+         }
+      }
+
+      @include md {
+         font-size: 48px;
+         line-height: 47px;
+
+         span {
+            font-size: 30px;
+         }
+      }
+   }
+
+   // .change-duration-container {
+   //    height: 200px;
+   // }
+
+   .up-down-percentage {
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 138%;
+      margin-left: 9px;
+      margin-bottom: 5px;
+
+      &.up {
+         color: #00EEA0;
+      }
+
+      &.down {
+         color: #e30000;
+      }
+
+      @include xxl {
+         font-size: 14px;
+      }
+
+      @include md {
+         font-size: 16px;
+      }
+   }
+
+   .change-duration-container {
+      width: 34px;
+      height: 36px;
+      background: map-get($map: $scs, $key: '100');
+      border-radius: 9px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 16px;
+
+      &:last-child {
+         margin-right: 0;
+      }
+
+      @include xxl {
+         width: 29px;
+         height: 30px;
+         font-size: 13px !important;
+         margin-right: 5px;
+         border-radius: 8px;
+      }
+   }
+
+   .propc-values-container {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 11px;
+
+      @include md {
+         grid-template-columns: repeat(1, 1fr);
+         gap: 8px;
+      }
+
+      .details-wrapper {
+         background: map-get($map: $scs, $key: '100');
+         border-radius: 10px;
+         padding: 12.5px 14px;
+         display: flex;
+         align-items: center;
+         justify-content: space-between;
+         height: 47px;
+
+         @include md {
+            height: 40px;
+            padding: 9px 14px;
+         }
+
+         .label {
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 157%;
+            color: #859BC8;
+
+            @include xxl {
+               font-size: 13px;
+            }
+
+            @include md {
+               font-size: 14px;
+            }
+         }
+
+         .value {
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 157%;
+            color: map-get($map: $pcs, $key: '300');
+
+            span {
+               font-size: 13px;
+               font-weight: 400;
+               line-height: 22px;
+               color: map-get($map: $scs, $key: '300');
+            }
+
+            @include xxl {
+               font-size: 13px;
+
+               span {
+                  font-size: 12px;
+                  line-height: 18px;
+               }
+            }
+
+         }
+      }
+   }
+
+   .view-chart-btn {
+      padding: 6px 7px;
+      height: 28px;
+      border: 0.8px solid map-get($map: $pcs, $key: '400');
+      border-radius: 6px;
+      background: transparent;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+   }
+
+   .purple-text {
+      color: #859BC8;
+   }
+
+   .chart-container {
+      opacity: 0;
+      visibility: hidden;
+
+      &.show {
+         opacity: 1;
+         visibility: visible;
+         transition: all 0.5s;
+      }
+   }
+
+   .chart-loader {
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      top: 0;
+      left: 0;
+      z-index: 10;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.5s;
+
+      &.show {
+         opacity: 1;
+         visibility: visible;
+      }
+
+      .loader {
+         height: 80px;
+         width: 80px;
+         border-radius: 50%;
+         border: 3px solid map-get($pcs, "200");
+         border-top: 3px solid map-get($pcs, "100");
+         animation: rotate 1s infinite;
+      }
+
+      @keyframes rotate {
+         from {
+            transform: rotate(0);
+         }
+
+         to {
+            transform: rotate(360deg);
+         }
+      }
+   }
+}

@@ -1,0 +1,179 @@
+.side-navbar {
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 282px;
+   height: 100%;
+   padding: 62px 0;
+   background: map-get($scs, '100');
+   box-shadow: 8px 4px 28px 5px #001642;
+   border-radius: 0px 30px 30px 0px;
+   overflow: auto;
+
+   @include xxl {
+      width: 265px;
+      padding: 42px 0;
+   }
+
+
+   @include xl {
+      left: -100%;
+      width: 400px;
+      border-radius: 0;
+      box-shadow: none;
+      z-index: -1;
+      padding: 80px 0 40px 0;
+      // opacity: 0;
+      visibility: hidden;
+      transition: all 0.5s;
+   }
+
+   @include md {
+      width: 100%;
+   }
+
+   &.open {
+      left: 0;
+      // opacity: 1;
+      visibility: visible;
+   }
+
+   .logo {
+      height: 28px;
+      width: 202px;
+
+      @include xxl {
+         height: 24px;
+         width: auto;
+      }
+   }
+
+   .navigation-links {
+      padding-left: 19px;
+      margin-top: 80px;
+
+      @include xxl {
+         margin-top: 60px;
+         padding-left: 25px;
+      }
+
+      @include md {
+         margin-top: 24px;
+         padding-left: 0;
+      }
+
+      .navigation-link-wrapper {
+         display: flex;
+         align-items: center;
+         padding: 18px 30px;
+         background: transparent;
+         border-radius: 50px 0px 0px 50px;
+         margin-bottom: 25px;
+         text-decoration: none;
+         transition: all 0.3s;
+
+         @include xxl {
+            padding: 16px 26px;
+            margin-bottom: 20px;
+            font-size: 18px !important;
+            line-height: 22px !important;
+         }
+
+         @include md {
+            border-radius: 0;
+         }
+
+         &:last-child {
+            margin-bottom: 0;
+         }
+
+         &.active {
+            background: map-get($map: $pcs, $key: '100');
+            color: map-get($map: $scs, $key: '100') !important;
+         }
+      }
+   }
+
+   .bottom-container {
+      padding: 20px 18px 0 18px;
+
+
+      .go-to-app-button {
+         border: 0.8px solid map-get($map: $pcs, $key: '300');
+         border-radius: 6px;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         padding: 16px 20px;
+         background: transparent;
+         text-decoration: none;
+         cursor: pointer;
+         margin-bottom: 32px;
+
+         .pc-icon {
+            height: 15px;
+            margin-right: 9px;
+         }
+
+         @include xxl {
+            padding: 14px 16px;
+            margin-bottom: 26px;
+            font-size: 15px !important;
+            line-height: 21px !important;
+         }
+      }
+   }
+
+   .propc-price-wrapper {
+      border: 0.5px solid #FFF9EC;
+      padding: 0 8px;
+      height: 45px;
+
+      .propc-icon {
+         height: 24px;
+         width: 24px;
+
+         img {
+            width: 12px;
+            height: 12px;
+         }
+      }
+
+      .propc-label {
+         font-size: 10px;
+         line-height: 15px;
+         margin-left: 7px;
+      }
+
+      .propc-price {
+         font-size: 13px;
+         line-height: 17px;
+         margin-left: 6px;
+      }
+
+      .percentage {
+         color: #00E398;
+         font-size: 9px;
+         line-height: 14px;
+
+         i {
+            margin-bottom: 3px;
+            margin-right: 2px;
+         }
+      }
+   }
+
+   .buy-propc-button {
+      width: 135px;
+      font-size: 12px;
+      line-height: 17px;
+      height: 45px;
+      padding: 0 15px;
+      flex-shrink: 0;
+      margin-right: 0;
+   }
+
+   .social-icons-container {
+      gap: 25px;
+   }
+}

@@ -1,0 +1,67 @@
+.modal-wrapper {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba($color: map-get($pcs, '200'), $alpha: 0.9);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  overflow: auto;
+  padding: 40px 0;
+  display: grid;
+  place-items: center;
+
+  @include md{
+    padding: 40px 10px;
+  }
+  &.show-modal {
+    opacity: 1;
+    visibility: visible;
+    z-index: 1101;
+  }
+
+  .modal-card {
+    padding: 40px 25px;
+    background: linear-gradient(112.59deg, rgba(255, 255, 255, 0.05) 15.05%, rgba(255, 255, 255, 0.11) 84.94%);
+    box-shadow: 0px 4px 24px -1px rgba(0, 0, 0, 0.12);
+    backdrop-filter: blur(20px);
+    border-radius: 22px;
+    max-width: 100%;
+
+    @include md {
+      padding: 30px 15px;
+      border-radius: 16px;
+      // width: 95% !important;
+      width: 100% !important;
+    }
+
+    .close-button {
+      height: 32px;
+      width: 32px;
+      border: none;
+      background: transparent;
+      padding: 0;
+
+      color: map-get($scs, "800");
+
+      &:focus {
+        outline: none;
+      }
+
+      >img {
+        height: 30px;
+        width: 30px;
+      }
+
+      @include md {
+        height: 30px;
+        width: 30px;
+        flex-shrink: 0;
+      }
+    }
+  }
+}

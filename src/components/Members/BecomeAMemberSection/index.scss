@@ -1,0 +1,93 @@
+.become-member-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 0;
+
+  .intro-title {
+    color: map-get($map: $pcs, $key: '400');
+    text-align: center;
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 263.636%;
+    letter-spacing: -0.33px;
+
+    @include md {
+      font-size: 21px;
+    }
+
+    @include md {
+      font-size: 18px;
+    }
+  }
+
+  .special-access-title {
+    color: map-get($map: $scs, $key: '400');
+    text-align: center;
+    font-size: 21px;
+    font-weight: 500;
+    line-height: 171.429%;
+    letter-spacing: -0.315px;
+    margin-bottom: 30px;
+    margin-top: 70px;
+
+    @include xxl {
+      font-size: 20px;
+    }
+
+    @include md {
+      font-size: 18px;
+    }
+  }
+
+  .special-access-wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+
+    @include md {
+      grid-template-columns: repeat(1, 1fr);
+    }
+
+    .item-box {
+      display: flex;
+      align-items: center;
+      height: 90px;
+      border-radius: 8.18px;
+      background: linear-gradient(164deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.11) 100%);
+      box-shadow: 0px 2.18px 13.10px -0.54px rgba(0, 0, 0, 0.12);
+      backdrop-filter: blur(10.91px);
+      padding: 18px 20px 18px 13px;
+
+      img {
+        height: 65px;
+        margin-right: 16px;
+
+        @include xxl {
+          height: 56px;
+        }
+
+        @include md {
+          height: 50px;
+        }
+      }
+
+      .title {
+        color: map-get($map: $pcs, $key: '400');
+        font-size: 17px;
+        font-weight: 600;
+        line-height: 89.913%;
+        letter-spacing: -0.255px;
+
+        @include xxl {
+          font-size: 16px;
+        }
+      }
+    }
+  }
+}

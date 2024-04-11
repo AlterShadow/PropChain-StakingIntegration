@@ -1,0 +1,338 @@
+.home-page {
+   box-sizing: border-box;
+   min-height: 100vh;
+
+   .home-row {
+      gap: 20px;
+
+      @include xxl {
+         gap: 16px;
+      }
+
+      .propc-banner {
+         width: 100%;
+         padding: 40px 40px 20px 46px;
+         background: url("../../static/assets/Home/propc-banner.png");
+         border-radius: 15px;
+         background-repeat: no-repeat;
+         background-position: center center;
+         background-size: cover;
+
+         @include xxl {
+            padding: 35px 35px 25px 40px;
+         }
+
+         @include md {
+            padding: 28px 26px;
+         }
+
+         .title-container {
+            width: 50%;
+
+            @include xl {
+               width: 100%;
+            }
+         }
+
+         .image-container {
+            width: 50%;
+         }
+
+         .title {
+            font-weight: 600;
+            font-size: 47px;
+            line-height: 51px;
+            color: map-get($map: $pcs, $key: '400');
+
+            div {
+               color: map-get($map: $pcs, $key: '100');
+            }
+
+            @include xxl {
+               font-size: 32px;
+               line-height: 40px;
+            }
+
+            @include md {
+               font-size: 26px;
+               line-height: 29px;
+            }
+         }
+
+         .desc {
+            font-weight: 400;
+            font-size: 17px;
+            line-height: 25px;
+            letter-spacing: -0.015em;
+            color: map-get($map: $scs, $key: '400');
+            margin-top: 22px;
+            margin-bottom: 40px;
+
+            @include xxl {
+               font-size: 15px;
+               line-height: 22px;
+               margin-top: 16px;
+               margin-bottom: 28px;
+            }
+
+            @include md {
+               font-size: 14px;
+               line-height: 21px;
+               margin-top: 14px;
+               margin-bottom: 22px;
+            }
+         }
+
+         .propc-token-img {
+            height: 318px;
+
+            @include xxl {
+               height: 240px
+            }
+         }
+      }
+   }
+
+
+   .home-cards {
+      position: relative;
+      background: linear-gradient(112.59deg, rgba(255, 255, 255, 0.05) 15.05%, rgba(255, 255, 255, 0.11) 84.94%);
+      box-shadow: 0px 4px 24px -1px rgba(0, 0, 0, 0.12);
+      backdrop-filter: blur(20px);
+      border-radius: 15px;
+      height: 100%;
+      width: 100%;
+      z-index: 1;
+      padding: 35px 45px;
+
+      @include xxl {
+         padding: 24px 36px;
+      }
+
+      @include md {
+         padding: 26px;
+      }
+
+      .title {
+         font-weight: 600;
+         font-size: 29px;
+         line-height: 36px;
+         letter-spacing: -0.015em;
+         color: map-get($map: $pcs, $key: '400');
+
+         @include xxl {
+            font-size: 27px;
+            line-height: 34px;
+         }
+
+         @include md {
+            font-size: 23px;
+            line-height: 29px;
+            position: relative;
+            z-index: 10;
+         }
+
+         span {
+            color: map-get($map: $pcs, $key: '100');
+         }
+      }
+
+      .desc {
+         margin: 19px 0;
+         max-width: 328px;
+         font-size: 15px;
+         line-height: 23px;
+         letter-spacing: -0.015em;
+         color: map-get($map: $scs, $key: '400');
+
+         @include xxl {
+            font-size: 14px;
+            line-height: 22px;
+            margin: 15px 0;
+         }
+
+         @include md {
+            font-size: 14px;
+            line-height: 21px;
+            position: relative;
+            z-index: 10;
+         }
+      }
+
+      .board-member-img {
+         position: absolute;
+         right: 0;
+         bottom: 0;
+         z-index: 1;
+
+         @include xxl {
+            width: 150px;
+         }
+
+         @include md {
+            width: 110px;
+         }
+      }
+
+      .start-now-button {
+         border: 0.8px solid map-get($map: $pcs, $key: '300');
+         border-radius: 6px;
+         height: 42px;
+         font-weight: 600;
+         font-size: 16px;
+         line-height: 22px;
+         text-align: center;
+         letter-spacing: -0.015em;
+         color: map-get($map: $pcs, $key: '300');
+         padding: 10px 20px;
+         background: transparent;
+
+         @include xxl {
+            height: 40px;
+            padding: 8px 18px;
+            font-size: 15px;
+            line-height: 21px;
+         }
+
+         @include md {
+            padding: 5px 20px;
+            font-size: 14px;
+            line-height: 22px;
+         }
+      }
+
+      .coming-soon-button {
+         display: flex;
+         align-items: center;
+         width: fit-content;
+         border: 0.8px solid map-get($map: $pcs, $key: '300');
+         border-radius: 6px;
+         font-weight: 600;
+         font-size: 16px;
+         line-height: 22px;
+         color: map-get($map: $pcs, $key: '300');
+         background: transparent;
+         padding: 5px 20px;
+         height: 42px;
+         text-decoration: none;
+
+         @include xxl {
+            height: 40px;
+            font-size: 15px;
+            line-height: 21px;
+         }
+      }
+   }
+
+   .card-bg-logo {
+      position: absolute;
+      right: 25px;
+      top: 20px;
+      height: 256px;
+      z-index: 0;
+
+      @include xxl {
+         height: 210px;
+      }
+
+      @include md {
+         height: 200px;
+      }
+   }
+
+   .shining-effect {
+      position: relative;
+      overflow: hidden;
+
+      &::after {
+         position: absolute;
+         content: "";
+         height: 140%;
+         width: 220px;
+         background: linear-gradient(to right, rgba(#fff, 0), rgba(#fff, 0.3), rgba(#fff, 0.6), rgba(#fff, 0.3));
+         top: -20%;
+         left: -400px;
+         opacity: 0.35;
+         transform: rotate(15deg);
+      }
+
+      &:hover {
+         &::after {
+            left: 120%;
+            transition: all 1s linear;
+         }
+      }
+   }
+
+   .news-container {
+      margin-bottom: 28px;
+
+      // @include xxl {
+      //    margin-bottom: 20px;
+      // }
+
+      .circle {
+         display: inline-block;
+         height: 8px;
+         width: 8px;
+         border-radius: 50%;
+         background-color: map-get($scs, "400");
+         margin-left: 14px;
+         margin-right: 14px;
+         margin-bottom: 3px;
+
+         @include xxl {
+            height: 6px;
+            width: 6px;
+            margin-left: 12px;
+            margin-right: 12px;
+         }
+      }
+
+      .title {
+         color: map-get($pcs, "100");
+         margin-right: 32px;
+         line-height: 22px;
+
+         @include xxl {
+            font-size: 15px;
+            line-height: 21px;
+         }
+
+         @include md {
+            font-size: 14px;
+         }
+
+         .circle {
+            height: 12px;
+            width: 12px;
+            background-color: map-get($pcs, "100");
+            margin-right: 10px;
+            margin-left: 0;
+            margin-bottom: 0;
+            flex-shrink: 0;
+
+            @include xxl {
+               font-size: 10px;
+               width: 10px;
+            }
+         }
+      }
+
+      .news-text {
+         font-weight: 500;
+         font-size: 18px;
+         line-height: 27px;
+         color: rgba(#fff, 0.67);
+
+         @include xxl {
+            font-size: 16px;
+            line-height: 22px;
+         }
+
+         @include md {
+            font-size: 16px;
+         }
+      }
+   }
+}

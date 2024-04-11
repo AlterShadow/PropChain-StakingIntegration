@@ -1,0 +1,163 @@
+// Font for icons
+@font-face {
+   font-family: "icon-font";
+   src: url("../static/fonts/icon-fonts/new-icons.eot");
+   src: url("../static/fonts/icon-fonts/new-icons.eot") format("embedded-opentype"),
+      url("../static/fonts/icon-fonts/new-icons.woff") format("woff"),
+      url("../static/fonts/icon-fonts/new-icons.ttf") format("truetype"),
+      url("../static/fonts/icon-fonts/new-icons.svg") format("svg");
+   font-weight: normal;
+   font-style: normal;
+}
+
+@font-face {
+   font-family: "Archivo SemiExpanded";
+   src: url("../static/fonts/Archivo_SemiExpanded/Archivo_SemiExpanded-ExtraBold.ttf") format("truetype");
+   font-weight: 800;
+   font-style: normal;
+   font-display: swap;
+}
+
+@font-face {
+   font-family: "Archivo SemiExpanded";
+   src: url("../static/fonts/Archivo_SemiExpanded/Archivo_SemiExpanded-Bold.ttf") format("truetype");
+   font-weight: 700;
+   font-style: normal;
+   font-display: swap;
+}
+
+@font-face {
+   font-family: "Archivo SemiExpanded";
+   src: url("../static/fonts/Archivo_SemiExpanded/Archivo_SemiExpanded-SemiBold.ttf") format("truetype");
+   font-weight: 600;
+   font-style: normal;
+   font-display: swap;
+}
+
+@font-face {
+   font-family: "Archivo SemiExpanded";
+   src: url("../static/fonts/Archivo_SemiExpanded/Archivo_SemiExpanded-Medium.ttf") format("truetype");
+   font-weight: 500;
+   font-style: normal;
+   font-display: swap;
+}
+
+@font-face {
+   font-family: "Archivo SemiExpanded";
+   src: url("../static/fonts/Archivo_SemiExpanded/Archivo_SemiExpanded-Regular.ttf") format("truetype");
+   font-weight: 400;
+   font-style: normal;
+   font-display: swap;
+}
+
+@font-face {
+   font-family: "Archivo SemiExpanded";
+   src: url("../static/fonts/Archivo_SemiExpanded/Archivo_SemiExpanded-Light.ttf") format("truetype");
+   font-weight: 300;
+   font-style: normal;
+   font-display: swap;
+}
+
+// variables for connect wallet modal styling
+:root {
+   // --onboard-modal-background: rgba(255, 255, 255, 0.05);
+   // --onboard-main-scroll-container-background: rgba(255, 255, 255, 0.05);
+   // --onboard-connect-sidebar-background: rgba(255, 255, 255, 0.05);
+   // --w3o-foreground-color: rgba(255, 255, 255, 0.05);
+   // --onboard-modal-backdrop: rgba(0, 20, 62, 0.95) !important;
+   // --onboard-modal-box-shadow: 0px 4px 24px -1px rgba(0, 0, 0, 0.12);
+   // --onboard-connect-sidebar-progress-background: #cadcff;
+   // --onboard-connect-sidebar-border-color : rgba(255, 255, 255, 0.5);
+   // --onboard-wallet-button-background : rgba(0, 20, 62, 0.9);
+   // --onboard-modal-backdrop: rgba(255, 255, 255, 0.30) !important; 'dark'
+   --onboard-modal-background: rgba(0, 20, 62, 1);
+   --onboard-main-scroll-container-background: rgba(0, 20, 62, 1);
+   --onboard-connect-sidebar-background: rgba(0, 20, 62, 1);
+   --w3o-foreground-color: rgba(0, 20, 62, 1) !important;
+   --onboard-modal-backdrop: rgba(0, 20, 62, 0.9);
+   --onboard-modal-box-shadow: 0 0 2px 5px rgba(255, 255, 255, 0.2);
+   --onboard-connect-sidebar-progress-background: #cadcff;
+}
+
+.container.svelte-b3j15j {
+   backdrop-filter: blur(10px);
+}
+
+body{
+   background: #00143E;
+}
+#root {
+   min-height: 100vh;
+   background: #00143E;
+}
+
+:root {
+   --rt-color-white: #fff;
+   --rt-color-dark: #000000;
+   --rt-color-success: #8dc572;
+   --rt-color-error: #be6464;
+   --rt-color-warning: #f0ad4e;
+   --rt-color-info: #337ab7;
+   --rt-opacity: 0.9;
+}
+
+* {
+   box-sizing: border-box;
+}
+
+body {
+   height: 100%;
+   font-family: "Archivo SemiExpanded", sans-serif;
+   scroll-behavior: smooth;
+   margin: 0;
+   letter-spacing: -0.015em;
+   box-sizing: border-box;
+}
+
+button {
+   &:focus {
+      outline: none;
+   }
+}
+
+.main-container {
+   padding: 46px 46px 60px 325px;
+
+   @include xxl {
+      padding: 25px 36px 30px 300px;
+   }
+
+   @include lg {
+      padding: 100px 120px 40px 120px;
+   }
+
+   @include md {
+      padding: 100px 20px 20px 20px;
+   }
+}
+
+.cursor-pointer {
+   cursor: pointer;
+}
+
+.site-container {
+   width: 100%;
+   max-width: 1600px;
+   margin-left: auto;
+   margin-right: auto;
+
+   @include xl {
+      max-width: 680px;
+   }
+}
+
+.modal.svelte-baitaa {
+   background: transparent !important;
+}
+
+.site-box{
+   border-radius: 16px;
+   background: linear-gradient(113deg, rgba(255, 255, 255, 0.02) 15.05%, rgba(255, 255, 255, 0.05) 84.94%);
+   box-shadow: 0px 4px 24px -1px rgba(0, 0, 0, 0.12);
+   backdrop-filter: blur(20px);
+}

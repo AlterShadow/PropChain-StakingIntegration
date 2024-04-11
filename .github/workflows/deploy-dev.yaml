@@ -1,0 +1,94 @@
+name: 'Deploy Token Dashboard to K8s Dev Environment'
+
+on:
+  push:
+    branches:
+      - 'development'
+    paths-ignore:
+      - 'Dockerfile'
+      - 'docs/**'
+      - '**.md'
+
+jobs:
+  deploy:
+    name: Deploy Token Dashboard
+    runs-on: ubuntu-latest
+    env:
+      IMAGE_NAME: token-dashboard-ui-dev
+      PROJECT_ID: ${{ secrets.GCP_PROJECT_ID }}
+      GKE_CLUSTER: ${{ secrets.GKE_CLUSTER }}
+      GKE_REGION: ${{ secrets.GKE_REGION }}
+      REGISTRY_REPO_NAME: ${{ secrets.GAR_REPO_NAME }}
+      REGISTRY_HOST: ${{ secrets.GAR_REGISTRY_HOST }}
+    steps:
+      - name: Checkout repository code
+        uses: actions/checkout@v3
+        with:
+          ref: 'development'
+
+      - name: Instantiate Versioning Variables
+        id: set_vars
+        run: |
+          echo "date=$(date +'%Y%m%d')" >> $GITHUB_OUTPUT
+          echo "short_sha=$(git rev-parse --short HEAD)" >> $GITHUB_OUTPUT
+
+      - name: Authenticate with Docker Images Pusher service account
+        uses: google-github-actions/auth@v0
+        with:
+          credentials_json: '${{ secrets.GAR_SA_CREDENTIALS }}'
+
+      - name: Create .env file
+        run: |
+          echo "${{ secrets.DEV_ENV_FILE }}" > .env
+
+      - name: Build Token Dashboard Docker Image
+        run: DOCKER_BUILDKIT=1 docker build -f ./Dockerfile -t $IMAGE_NAME:latest .
+
+      - name: Configure Docker Client
+        run: |-
+          gcloud auth configure-docker --quiet
+          gcloud auth configure-docker $GKE_REGION-$REGISTRY_HOST --quiet
+
+      - name: Push Docker Image to Google Artifacts Registry (GAR)
+        env:
+          GIT_TAG: ${{ steps.set_vars.outputs.short_sha }}-${{ steps.set_vars.outputs.date }}
+        run: |-
+          docker tag $IMAGE_NAME:latest $GKE_REGION-$REGISTRY_HOST/$PROJECT_ID/$REGISTRY_REPO_NAME/$IMAGE_NAME:$GIT_TAG
+          docker push $GKE_REGION-$REGISTRY_HOST/$PROJECT_ID/$REGISTRY_REPO_NAME/$IMAGE_NAME:$GIT_TAG
+
+      - name: Set up Cloud SDK
+        uses: google-github-actions/setup-gcloud@v1
+
+    # Get the GKE credentials so we can deploy to the cluster
+      - run: |-
+          gcloud container clusters get-credentials "$GKE_CLUSTER" --region "$GKE_REGION" --project "$PROJECT_ID"
+
+    # install Gke gcloud auth plugin so we can use kubectl
+      - name: Install Gke-gcloud-auth-plugin
+        run: |-
+          gcloud components install gke-gcloud-auth-plugin
+
+      - name: Update deployment manifests
+        env:
+          GIT_TAG: ${{ steps.set_vars.outputs.short_sha }}-${{ steps.set_vars.outputs.date }}
+        run: |
+          sed -i 's#${{ env.IMAGE_NAME }}:.*#${{ env.IMAGE_NAME }}:${{ env.GIT_TAG }}#g' deploy/dev-manifests/deployment.yaml
+          cat deploy/dev-manifests/deployment.yaml
+
+      # Apply all the manifests in the deploy/dev-manifests directory
+      - name: Apply All Manifests
+        run: |-
+          kubectl apply -f ./deploy/dev-manifests/deployment.yaml
+          kubectl apply -f ./deploy/dev-manifests/service.yaml
+          kubectl apply -f ./deploy/dev-manifests/ingress.yaml
+
+      - name: Add and commit manifest changes
+        uses: EndBug/add-and-commit@v9
+        with:
+          default_author: github_actions
+          message: Update plafrom dev deployment manifest
+          committer_name: GitHub Actions
+          committer_email: actions@github.com
+          add: 'deploy/*'
+          push: true
+

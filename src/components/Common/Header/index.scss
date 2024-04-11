@@ -1,0 +1,297 @@
+header {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   padding-bottom: 40px;
+
+   @include xl {
+      top: 0;
+      left: 0;
+      position: fixed;
+      z-index: 1100;
+      width: 100%;
+      background-color: map-get($scs, "100");
+      height: 80px;
+      padding: 0 20px;
+   }
+
+   .live-eth-wrapper {
+      border-radius: 10px;
+      background: map-get($map: $scs, $key: '100');
+      padding: 7px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      @include xxl {
+         padding: 6px 14px;
+      }
+
+      @include xl {
+         display: none;
+      }
+
+      .dot {
+         background-color: map-get($map: $sucs, $key: '100');
+         height: 8px !important;
+         width: 8px !important;
+         border-radius: 50%;
+         margin-right: 9px;
+      }
+
+      div {
+         font-weight: 400;
+         font-size: 15px;
+         line-height: 19px;
+         color: map-get($map: $pcs, $key: '400');
+
+         @include xxl {
+            font-size: 13px;
+            line-height: 18px;
+         }
+      }
+   }
+
+
+   .propc-price-wrapper {
+      padding: 7px 16px;
+      background: map-get($map: $scs, $key: '100');
+      border-radius: 10px;
+      height: 61px;
+
+      @include xxl {
+         height: 48px;
+         padding: 5px 14px;
+      }
+
+      .propc-icon {
+         width: 45px;
+         height: 47px;
+         background: map-get($map: $scs, $key: '100');
+         border: 0.66px solid map-get($map: $scs, $key: '200');
+         border-radius: 50%;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+
+         img {
+            height: 23px;
+            width: 23px;
+         }
+
+         @include xxl {
+            width: 35px;
+            height: 37px;
+
+            img {
+               height: 18px;
+               width: 18px;
+            }
+         }
+      }
+
+      .propc-label {
+         font-weight: 400;
+         font-size: 15px;
+         line-height: 19px;
+         color: map-get($map: $pcs, $key: '400');
+         margin-left: 9px;
+
+         @include xxl {
+            font-size: 14px;
+            line-height: 18px;
+            margin-left: 7px;
+         }
+      }
+
+      .propc-price {
+         font-weight: 500;
+         font-size: 21px;
+         line-height: 22px;
+         color: map-get($map: $pcs, $key: '400');
+         margin-left: 9px;
+         margin-right: 9px;
+
+         @include xxl {
+            font-size: 18px;
+            line-height: 21px;
+            margin-left: 7px;
+            margin-right: 7px;
+         }
+      }
+
+      .percentage {
+         &.up {
+            color: #00E398;
+         }
+
+         &.down {
+            color: #e30000;
+         }
+
+         i {
+            margin-bottom: 3px;
+            margin-right: 2px;
+         }
+      }
+   }
+
+   .buy-propc-button {
+      height: 61px;
+      margin: 0 8px;
+      border: 0.8px solid map-get($map: $pcs, $key: '300');
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 22px;
+      color: map-get($map: $pcs, $key: '300');
+      padding: 15px 20px;
+      background: transparent;
+
+      img {
+         height: 15px;
+         margin-right: 9px;
+      }
+
+      @include xxl {
+         height: 48px;
+         padding: 5px 15px;
+         font-size: 15px;
+         line-height: 21px;
+
+         img {
+            height: 12px;
+            margin-right: 7px;
+         }
+      }
+   }
+
+   .wallet-connected-button {
+      height: 61px;
+      margin: 0 8px;
+      border: 0.8px solid map-get($map: $pcs, $key: '300');
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 22px;
+      color: map-get($map: $pcs, $key: '300');
+      padding: 0 20px;
+      background: transparent;
+
+      @include xxl {
+         height: 48px;
+         padding: 5px 15px;
+         font-size: 15px;
+         line-height: 21px;
+      }
+
+      @include md {
+         height: 35px;
+      }
+
+      .wallet-icon {
+         width: auto;
+         height: 20px;
+      }
+
+      .dot {
+         height: 9px;
+         width: 9px;
+         border-radius: 50%;
+      }
+   }
+
+   .connect-wallet-button {
+      height: 61px;
+      border-radius: 10px;
+
+      @include xxl {
+         height: 48px;
+      }
+
+      i {
+         margin-right: 5px;
+
+         @include md {
+            margin-right: 0;
+         }
+      }
+
+      @include md {
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         height: 40px;
+         width: 40px;
+         padding: 0 !important;
+         min-width: unset !important;
+         border-radius: 8px;
+         overflow: hidden;
+      }
+
+      span {
+         @include md {
+            display: none;
+         }
+      }
+   }
+
+   .header-dropdown {
+      position: absolute;
+      width: 280px;
+      right: 0;
+      top: 100%;
+      background: linear-gradient(112.59deg, rgba(255, 255, 255, 0.05) 15.05%, rgba(255, 255, 255, 0.11) 84.94%);
+      box-shadow: 0px 4px 24px -1px rgba(0, 0, 0, 0.12);
+      backdrop-filter: blur(20px);
+      border-radius: 15px;
+      padding: 30px 15px;
+      z-index: 10;
+      transform: translateY(0px) scaleY(0.2);
+      opacity: 0;
+      visibility: hidden;
+      transform-origin: top right;
+      transition: all 0.5s;
+
+      &.open {
+         transform: translateY(10px) scaleY(1);
+         opacity: 1;
+         visibility: visible;
+      }
+
+
+      .dropdown-item {
+         height: 45px;
+         background: linear-gradient(112.59deg, rgba(255, 255, 255, 0.05) 15.05%, rgba(255, 255, 255, 0.11) 84.94%);
+         box-shadow: 0px 4px 24px -1px rgba(0, 0, 0, 0.12);
+         backdrop-filter: blur(20px);
+         border-radius: 15px;
+         padding: 0 12px;
+         margin-bottom: 8px;
+         cursor: pointer;
+
+         &:last-child {
+            margin-bottom: 0;
+         }
+
+         .coinmerce-icon {
+            height: 28px;
+         }
+      }
+
+      &.wallet-dropdown {
+         padding: 30px;
+
+         .dot {
+            height: 12px;
+            width: 12px;
+         }
+      }
+   }
+}

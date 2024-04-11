@@ -1,0 +1,115 @@
+// primary colors
+$pcs: (
+   "100": #FFBE06,
+   "200": #00143e,
+   "300": #FFF9EC,
+   "400": #fff,
+   "450": #182c56,
+);
+// secondary colors
+$scs: (
+   "100": #182c56,
+   "150": #4263a6,
+   "200": #4263a6,
+   "300": #6c90d9,
+   "400": #cadcff,
+   "450": #e3e9f7,
+   "500": #ffca33,
+   "600": #fed566,
+   "700": #ffe499,
+   "800": #aeaeae,
+   "900": #e8e8e8,
+   "950": #f1f1f1,
+);
+// error colors
+$ecs: (
+   "100": #ff4545,
+   "200": #ffb0b0,
+);
+
+// success colors
+$sucs: (
+   "100": #00b67a,
+   "200": #e1fff5,
+   // "200": #c3ffeb,
+);
+
+// $gradients: (
+//     "100": #182c56, #2a4785,
+// );
+
+//// Generate text styles
+// primary
+@each $shade,
+$value in $pcs {
+   .text-pri-#{$shade} {
+      color: $value !important;
+   }
+}
+
+// secondary
+@each $shade,
+$value in $scs {
+   .text-sec-#{$shade} {
+      color: $value !important;
+   }
+}
+
+// error
+@each $shade,
+$value in $ecs {
+   .text-err-#{$shade} {
+      color: $value !important;
+   }
+}
+
+// success
+@each $shade,
+$value in $sucs {
+   .text-succ-#{$shade} {
+      color: $value !important;
+   }
+}
+
+//Background colors
+
+@each $shade,
+$value in $pcs {
+   .bg-pri-#{$shade} {
+      background-color: $value !important;
+   }
+}
+
+// secondary
+@each $shade,
+$value in $scs {
+   .bg-sec-#{$shade} {
+      background-color: $value !important;
+   }
+}
+
+// error
+@each $shade,
+$value in $ecs {
+   .bg-err-#{$shade} {
+      background-color: $value !important;
+   }
+}
+
+// success
+@each $shade,
+$value in $sucs {
+   .bg-succ-#{$shade} {
+      background-color: $value !important;
+   }
+}
+
+.border-sec-400 {
+   border: 1px solid map-get($scs, "400");
+}
+
+$purple : #859BC8;
+
+.purple-text{
+   color: $purple;
+}

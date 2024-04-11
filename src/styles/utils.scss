@@ -1,0 +1,277 @@
+// margins and paddings
+
+@for $n from 0 through 50 {
+
+   // Margins
+   .margin-left-#{$n} {
+      margin-left: #{$n}px !important;
+   }
+
+   ;
+
+   .margin-right-#{$n} {
+      margin-right: #{$n}px !important;
+   }
+
+   ;
+
+   .margin-top-#{$n} {
+      margin-top: #{$n}px !important;
+   }
+
+   ;
+
+   .margin-bottom-#{$n} {
+      margin-bottom: #{$n}px !important;
+   }
+
+   ;
+
+   .margin-#{$n} {
+      margin: #{$n}px !important;
+   }
+
+   ;
+
+   .margin-x-#{$n} {
+      margin-left: #{$n}px !important;
+      margin-right: #{$n}px !important;
+   }
+
+   ;
+
+   .margin-y-#{$n} {
+      margin-top: #{$n}px !important;
+      margin-bottom: #{$n}px !important;
+   }
+
+   ;
+
+   // Paddings
+   .padding-left-#{$n} {
+      padding-left: #{$n}px !important;
+   }
+
+   ;
+
+   .padding-right-#{$n} {
+      padding-right: #{$n}px !important;
+   }
+
+   ;
+
+   .padding-top-#{$n} {
+      padding-top: #{$n}px !important;
+   }
+
+   ;
+
+   .padding-bottom-#{$n} {
+      padding-bottom: #{$n}px !important;
+   }
+
+   ;
+
+   .padding-#{$n} {
+      padding: #{$n}px !important;
+   }
+
+   ;
+
+   .padding-x-#{$n} {
+      padding-left: #{$n}px !important;
+      padding-right: #{$n}px !important;
+   }
+
+   ;
+
+   .padding-y-#{$n} {
+      padding-top: #{$n}px !important;
+      padding-bottom: #{$n}px !important;
+   }
+
+   ;
+
+   // Gaps - To be used with flex and grid
+   .col-gap-#{$n} {
+      column-gap: #{$n}px !important;
+   }
+
+   ;
+
+   .row-gap-#{$n} {
+      row-gap: #{$n}px !important;
+   }
+
+   ;
+
+   .gap-#{$n} {
+      gap: #{$n}px !important;
+   }
+
+   ;
+
+   // Border-radius
+   .br-#{$n} {
+      border-radius: #{$n}px !important;
+   }
+
+   ;
+
+   // For mobile
+   // .margin-left-md-#{$n} {
+   //    @include md {
+   //       margin-left: #{$n}px !important;
+   //    }
+   // }
+
+   ;
+
+   // .margin-right-md-#{$n} {
+   //    @include md {
+   //       margin-right: #{$n}px !important;
+   //    }
+   // }
+
+   // ;
+
+   // .margin-top-md-#{$n} {
+   //    @include md {
+   //       margin-top: #{$n}px !important;
+   //    }
+   // }
+
+   // ;
+
+   .margin-bottom-md-#{$n} {
+      @include md {
+         margin-bottom: #{$n}px !important;
+      }
+   }
+
+   // ;
+
+   // .margin-md-#{$n} {
+   //    @include md {
+   //       margin: #{$n}px !important;
+   //    }
+   // }
+
+   // ;
+
+   // .margin-x-md-#{$n} {
+   //    @include md {
+   //       margin-left: #{$n}px !important;
+   //       margin-right: #{$n}px !important;
+   //    }
+   // }
+
+   // ;
+
+   // .margin-y-md-#{$n} {
+   //    @include md {
+   //       margin-top: #{$n}px !important;
+   //       margin-bottom: #{$n}px !important;
+   //    }
+   // }
+
+   // ;
+
+   // // Paddings
+   // .padding-left-md-#{$n} {
+   //    @include md {
+   //       padding-left: #{$n}px !important;
+   //    }
+   // }
+
+   // ;
+
+   // .padding-right-md-#{$n} {
+   //    @include md {
+   //       padding-right: #{$n}px !important;
+   //    }
+   // }
+
+   // ;
+
+   // .padding-top-md-#{$n} {
+   //    @include md {
+   //       padding-top: #{$n}px !important;
+   //    }
+   // }
+
+   // ;
+
+   // .padding-bottom-md-#{$n} {
+   //    @include md {
+   //       padding-bottom: #{$n}px !important;
+   //    }
+   // }
+
+   // ;
+
+   // .padding-md-#{$n} {
+   //    @include md {
+   //       padding: #{$n}px !important;
+   //    }
+   // }
+
+   // ;
+
+   // .padding-x-md-#{$n} {
+   //    @include md {
+   //       padding-left: #{$n}px !important;
+   //       padding-right: #{$n}px !important;
+   //    }
+   // }
+
+   // ;
+
+   // .padding-y-md-#{$n} {
+   //    @include md {
+   //       padding-top: #{$n}px !important;
+   //       padding-bottom: #{$n}px !important;
+   //    }
+   // }
+
+   // ;
+
+   // // Gaps - To be used with flex and grid
+   // .col-gap-md-#{$n} {
+   //    @include md {
+   //       column-gap: #{$n}px !important;
+   //    }
+   // }
+
+   // ;
+
+   // .row-gap-md-#{$n} {
+   //    @include md {
+   //       row-gap: #{$n}px !important;
+   //    }
+   // }
+
+   // ;
+
+   // .gap-md-#{$n} {
+   //    @include md {
+   //       gap: #{$n}px !important;
+   //    }
+   // }
+
+   // ;
+
+   // // Border-radius
+   // .br-md-#{$n} {
+   //    @include md {
+   //       border-radius: #{$n}px !important;
+   //    }
+   // }
+
+   // ;
+
+   // icons-font-size
+   .pc-icon-size-#{$n} {
+      font-size: #{$n}px;
+   }
+}
